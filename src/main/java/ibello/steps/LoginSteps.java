@@ -2,12 +2,14 @@ package ibello.steps;
 
 import hu.ibello.core.Name;
 import hu.ibello.steps.StepLibrary;
+import ibello.pages.CasesPage;
 import ibello.pages.LoginPage;
 
 @Name("Login steps")
 public class LoginSteps extends StepLibrary{
     
     private LoginPage loginPage;
+    private CasesPage casesPage;
     
     public void open_demo_application() {
         loginPage.open_demo_page();
@@ -27,7 +29,7 @@ public class LoginSteps extends StepLibrary{
     }
     
     public void cases_page_is_loaded() {
-    
+        casesPage.page_must_be_loaded();
     }
     
     @Name("login with ${0} user")
