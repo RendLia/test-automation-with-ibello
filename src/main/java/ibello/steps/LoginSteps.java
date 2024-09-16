@@ -7,7 +7,8 @@ import ibello.pages.LoginPage;
 
 @Name("Login steps")
 public class LoginSteps extends StepLibrary{
-    
+
+    private static final String LOGIN_ERROR_MSG = "A felhasználói név és/vagy jelszó nem megfelelő.";
     private LoginPage loginPage;
     private CasesPage casesPage;
     
@@ -30,6 +31,11 @@ public class LoginSteps extends StepLibrary{
     
     public void cases_page_is_loaded() {
         casesPage.page_must_be_loaded();
+    }
+
+    public void error_message_is_displayed() {
+        loginPage.error_message_should_be_displayed();
+        loginPage.$_error_message_should_be_displayed(LOGIN_ERROR_MSG);
     }
     
     @Name("login with ${0} user")

@@ -38,15 +38,15 @@ public class LoginWorkflow extends StepLibrary {
     
     // 2.
     public void a_felhasználó_érvénytelen_jelszót_ad_meg() {
-    
+        loginSteps.enter_$_password("3s4d5f6");
     }
     
     public void a_bejelentkezés_sikertelen() {
-    
+     // Másik teszt lépés lefedi
     }
     
     public void a_felhasználó_érvénytelen_felhasználói_adatokkal_kapcsolatos_hibaüzenetet_kap() {
-    
+        loginSteps.error_message_is_displayed();
     }
 
 }
