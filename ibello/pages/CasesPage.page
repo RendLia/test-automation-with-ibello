@@ -1,0 +1,40 @@
+{
+  "name": "CasesPage",
+  "namespace": "Cases Page",
+  "packageName": "ibello.pages",
+  "frame": {
+    "locators": []
+  },
+  "elements": [
+    {
+      "fieldName": "cím",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "panel-heading"
+        }
+      ],
+      "positions": [],
+      "by": "TEXT",
+      "selector": "Ügyek"
+    }
+  ],
+  "methods": [
+    {
+      "name": "page must be loaded",
+      "selected": true,
+      "actions": [],
+      "expectations": [
+        {
+          "soft": false,
+          "negate": false,
+          "kind": "displayed",
+          "target": "cím"
+        }
+      ]
+    }
+  ]
+}
