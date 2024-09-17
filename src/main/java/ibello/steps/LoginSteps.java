@@ -8,12 +8,13 @@ import ibello.pages.LoginPage;
 @Name("Login steps")
 public class LoginSteps extends StepLibrary{
 
-    private static final String LOGIN_ERROR_MSG = "A felhasználói név és/vagy jelszó nem megfelelő.";
     private LoginPage loginPage;
     private CasesPage casesPage;
     
     public void open_demo_application() {
-        loginPage.open_demo_page();
+        if (!loginPage.is_page_loaded()) {
+            loginPage.open_demo_page();
+        }
         loginPage.page_must_be_loaded();
     }
     
@@ -35,16 +36,29 @@ public class LoginSteps extends StepLibrary{
 
     public void error_message_is_displayed() {
         loginPage.error_message_should_be_displayed();
-        loginPage.$_error_message_should_be_displayed(LOGIN_ERROR_MSG);
+        loginPage.login_error_message_should_be_displayed();
     }
     
     @Name("login with ${0} user")
     public void login_with_$_user(String username, String password) {
-        open_demo_application();
         enter_$_username(username);
         enter_$_password(password);
         attempt_to_login();
         cases_page_is_loaded();
     }
-    
+
+    @Name("login with ${0} user without pw" ) // a lenti megnevezés esetén nem kell a név anotáció
+    public void login_with_error(String username) { // login_with_$_user_without_pw
+        if (!loginPage.is_error_msg_displayed()) {
+            open_demo_application();
+            enter_$_username(username);
+            enter_$_password("ertzuio");
+            attempt_to_login();
+            error_message_is_displayed();
+            loginPage.page_must_be_loaded();
+        } else {
+            output().recordCustomAction("Már korábban megtörtént");
+        }
+    }
+
 }

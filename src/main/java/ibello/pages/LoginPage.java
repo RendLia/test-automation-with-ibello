@@ -10,6 +10,7 @@ import hu.ibello.search.Find;
 public class LoginPage extends PageObject {
 
     private static final String URL = "https://ibello.hu/tasks/cases/#/login";
+    private static final String LOGIN_ERROR_MSG = "A felhasználói név és/vagy jelszó nem megfelelő.";
 
     @Find(by = By.ID, using = "username")
     private WebElement usernameField;
@@ -34,6 +35,11 @@ public class LoginPage extends PageObject {
         expectations().expect(passwordField).toBe().displayed();
     }
 
+    public boolean is_page_loaded() {
+        //return browser().getURL().equals(URL); // alternatívája a lentinek
+        return checkThat(usernameField).isDisplayed();
+    }
+
     public void click_on_login_button() {
         doWith(loginButton).click();
     }
@@ -50,8 +56,15 @@ public class LoginPage extends PageObject {
         expectations().assume(error).toBe().displayed();
     }
     
-    public void $_error_message_should_be_displayed(String msg) {
-        expectations().assume(error).toHave().text(msg);
+    public void login_error_message_should_be_displayed() {
+        expectations().assume(error).toHave().text(LOGIN_ERROR_MSG);
     }
 
+    public boolean is_error_msg_displayed() {
+        if (checkThat(error).isDisplayed()) {
+            String errorMsg = get(error).text();
+            return errorMsg.equals(LOGIN_ERROR_MSG);
+        }
+        return false;
+    }
 }

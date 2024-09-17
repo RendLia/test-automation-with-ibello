@@ -49,4 +49,16 @@ public class LoginWorkflow extends StepLibrary {
         loginSteps.error_message_is_displayed();
     }
 
+    public void sikertelen_belépés_után__a_felhasználó_még_a_belépés_oldalon_van() {
+        String username = getConfigurationValue("demo.app.username").toString();
+        loginSteps.login_with_error(username);
+
+    }
+
+    public void a_felhasználó_érvényes_adatokkal_próbál_meg_belépni() {
+        String username = getConfigurationValue("demo.app.username").toString();
+        String password = getConfigurationValue("demo.app.password").toString();
+        loginSteps.login_with_$_user(username,password);
+    }
+
 }
