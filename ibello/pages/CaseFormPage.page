@@ -113,7 +113,63 @@
       "positions": [],
       "by": "BUTTON_TEXT",
       "selector": "Mégsem"
+    },
+    {
+      "fieldName": "cím",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [
+        {
+          "type": "DESCENDANT_OF",
+          "by": "CLASS_NAME",
+          "selector": "panel-heading"
+        }
+      ],
+      "positions": [],
+      "by": "PARTIAL_TEXT",
+      "selector": "Ügy "
     }
   ],
-  "methods": []
+  "methods": [
+    {
+      "name": "cim readonly",
+      "selected": true,
+      "actions": [],
+      "expectations": [
+        {
+          "soft": true,
+          "negate": false,
+          "kind": "readonly",
+          "target": "cím"
+        }
+      ]
+    },
+    {
+      "name": "",
+      "selected": true,
+      "actions": [
+        {
+          "kind": "sendKeys",
+          "target": "validityField",
+          "value": "2024"
+        },
+        {
+          "kind": "sendSpecialKey",
+          "target": "validityField",
+          "value": ""
+        },
+        {
+          "kind": "sendKeys",
+          "target": "validityField",
+          "value": "09"
+        },
+        {
+          "kind": "sendKeys",
+          "target": "validityField",
+          "value": "24"
+        }
+      ],
+      "expectations": []
+    }
+  ]
 }

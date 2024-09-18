@@ -18,8 +18,14 @@ public class CasesPage extends PageObject {
 	@Find(by = By.BUTTON_TEXT, using = "Új ügy")
 	private WebElement újÜgyButton;
 
+	//tábla elem azonosítás 1-n esetre. érték tárolás. List? Arrylist? Csoprtosítási opciók?
+
 	public void page_must_be_loaded() {
 		expectations().expect(cím).toBe().displayed();
+	}
+
+	public void click_on_new_case_button() {
+		doWith(újÜgyButton).click();
 	}
 
 }
