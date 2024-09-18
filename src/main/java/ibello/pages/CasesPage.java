@@ -15,6 +15,9 @@ public class CasesPage extends PageObject {
 	@Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "panel-heading")
 	private WebElement cím;
 
+	@Find(by = By.BUTTON_TEXT, using = "Új ügy")
+	private WebElement újÜgyButton;
+
 	public void page_must_be_loaded() {
 		expectations().expect(cím).toBe().displayed();
 	}

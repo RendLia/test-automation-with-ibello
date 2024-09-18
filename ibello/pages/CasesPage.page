@@ -20,6 +20,16 @@
       "positions": [],
       "by": "TEXT",
       "selector": "Ügyek"
+    },
+    {
+      "fieldName": "újÜgyButton",
+      "xpath": "/html[1]/body[1]/div[1]/router-view[1]/div[1]/div[2]/div[1]/a[1]",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "BUTTON_TEXT",
+      "selector": "Új ügy"
     }
   ],
   "methods": [
