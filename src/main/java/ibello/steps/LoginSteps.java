@@ -18,12 +18,18 @@ public class LoginSteps extends StepLibrary{
         loginPage.page_must_be_loaded();
     }
     
-    public void enter_$_username(String username) {
+    public void enter_valid_username() {
+        String username = getConfigurationValue("demo.app.username").toString();
         loginPage.set_username_to_$(username);
     }
-    
-    public void enter_$_password(String password) {
+
+    public void enter_valid_password() {
+        String password = getConfigurationValue("demo.app.password").toString();
         loginPage.set_password_to_$(password);
+    }
+
+    public void enter_invalid_password() {
+        loginPage.set_password_to_$("3s4d5f6");
     }
     
     public void attempt_to_login() {
@@ -39,20 +45,18 @@ public class LoginSteps extends StepLibrary{
         loginPage.login_error_message_should_be_displayed();
     }
     
-    @Name("login with ${0} user")
-    public void login_with_$_user(String username, String password) {
-        enter_$_username(username);
-        enter_$_password(password);
+    public void login_with_valid_user() {
+        enter_valid_username();
+        enter_valid_password();
         attempt_to_login();
         cases_page_is_loaded();
     }
 
-    @Name("login with ${0} user without pw" ) // a lenti megnevezés esetén nem kell a név anotáció
-    public void login_with_error(String username) { // login_with_$_user_without_pw
+    public void login_with_invalid_password() {
         if (!loginPage.is_error_msg_displayed()) {
             open_demo_application();
-            enter_$_username(username);
-            enter_$_password("ertzuio");
+            enter_valid_username();
+            enter_invalid_password();
             attempt_to_login();
             error_message_is_displayed();
             loginPage.page_must_be_loaded();

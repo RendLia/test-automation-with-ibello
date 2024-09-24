@@ -15,13 +15,11 @@ public class LoginWorkflow extends StepLibrary {
     }
 
     public void a_felhasználó_érvényes_felhasználói_nevet_ad_meg() {
-        String username = getConfigurationValue("demo.app.username").toString();
-        loginSteps.enter_$_username(username);
+        loginSteps.enter_valid_password();
     }
 
     public void a_felhasználó_érvényes_jelszót_ad_meg() {
-        String password = getConfigurationValue("demo.app.password").toString();
-        loginSteps.enter_$_password(password);
+        loginSteps.enter_valid_password();
     }
 
     public void a_felhasználó_megpróbál_bejelentkezni() {
@@ -38,7 +36,7 @@ public class LoginWorkflow extends StepLibrary {
     
     // 2.
     public void a_felhasználó_érvénytelen_jelszót_ad_meg() {
-        loginSteps.enter_$_password("3s4d5f6");
+        loginSteps.enter_invalid_password();
     }
     
     public void a_bejelentkezés_sikertelen() {
@@ -50,15 +48,12 @@ public class LoginWorkflow extends StepLibrary {
     }
 
     public void sikertelen_belépés_után__a_felhasználó_még_a_belépés_oldalon_van() {
-        String username = getConfigurationValue("demo.app.username").toString();
-        loginSteps.login_with_error(username);
+        loginSteps.login_with_invalid_password();
 
     }
 
     public void a_felhasználó_érvényes_adatokkal_próbál_meg_belépni() {
-        String username = getConfigurationValue("demo.app.username").toString();
-        String password = getConfigurationValue("demo.app.password").toString();
-        loginSteps.login_with_$_user(username,password);
+        loginSteps.login_with_valid_user();
     }
 
 }

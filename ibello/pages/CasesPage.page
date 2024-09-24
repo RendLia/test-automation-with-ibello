@@ -30,6 +30,36 @@
       "positions": [],
       "by": "BUTTON_TEXT",
       "selector": "Új ügy"
+    },
+    {
+      "fieldName": "demóLink",
+      "xpath": "/html[1]/body[1]/nav-bar[1]/nav[1]/div[1]/div[1]/a[1]",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "BUTTON_TEXT",
+      "selector": "Demó"
+    },
+    {
+      "fieldName": "ügyekLink",
+      "xpath": "/html[1]/body[1]/nav-bar[1]/nav[1]/div[1]/div[2]/ul[1]/li[1]/a[1]",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "BUTTON_TEXT",
+      "selector": "Ügyek"
+    },
+    {
+      "fieldName": "újÜgyLink",
+      "xpath": "/html[1]/body[1]/nav-bar[1]/nav[1]/div[1]/div[2]/ul[1]/li[2]/a[1]",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "BUTTON_TEXT",
+      "selector": "Új ügy"
     }
   ],
   "methods": [

@@ -13,8 +13,8 @@ public class AbstractFormPage extends PageObject {
 	@Find(by = By.ID, using = "name")
 	private WebElement nameField;
 
-	@Find(by = By.ID, using = "status")
-	private WebElement statusField;
+	@Find(by = By.ID, using = "status")//?? nem vagyok benne bbiztos hogy ez igy okés új és szerkesztéskor egyedi a működése
+	protected static WebElement statusField;
 
 	@Find(by = By.ID, using = "validity")
 	private WebElement validityField;
@@ -37,10 +37,10 @@ public class AbstractFormPage extends PageObject {
 	@Find(by = By.ID, using = "responsible")
 	private WebElement responsibleField;
 
-	@Find(by = By.BUTTON_TEXT, using = "Mentés")
+	@Find(by = By.BUTTON_TEXT, using = "${demo.save.button}")
 	private WebElement mentésButton;
 
-	@Find(by = By.BUTTON_TEXT, using = "Mégsem")
+	@Find(by = By.BUTTON_TEXT, using = "${demo.cancel.button}")
 	private WebElement mégsemButton;
 
 	public void set_casename_to_$(String casename) {
@@ -49,10 +49,6 @@ public class AbstractFormPage extends PageObject {
 
 	public void set_status_to_$(String status) {
 		doWith(statusField).setValue(status);
-	}
-
-	public boolean is_status_editable(){
-		return checkThat(statusField).isReadonly();
 	}
 
 	public void set_valitity_to_$(LocalDate validity) {
@@ -93,7 +89,7 @@ public class AbstractFormPage extends PageObject {
 
 	public void assume_that_responsible_field_is_not_empty() {
 		Pattern p = Pattern.compile("\\w");
-		expectations().assume(responsibleField).toHave().text(p);
+		expectations().assume(responsibleField).toHave().text(p); //üres a text a háttérben
 	}
 
 	public void click_on_save_button() {

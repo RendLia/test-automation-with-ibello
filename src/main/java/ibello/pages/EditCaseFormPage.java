@@ -18,9 +18,12 @@ public class EditCaseFormPage extends AbstractFormPage {
         expectations().expect(cím).toBe().displayed();
     }
 
-    public void assume_that_title_contains_$_id(int id) {
+    public void assume_that_title_contains_$_id(String id) {
         WebElement cím = this.cím.find().using(By.CSS_SELECTOR, "h3").first();
         expectations().assume(cím).toHave().text("Ügy "+id);
     }
 
+    public boolean is_status_editable() {
+        return checkThat(statusField).isReadonly();
+    }
 }

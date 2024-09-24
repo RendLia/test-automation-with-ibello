@@ -15,8 +15,17 @@ public class CasesPage extends PageObject {
 	@Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "panel-heading")
 	private WebElement cím;
 
-	@Find(by = By.BUTTON_TEXT, using = "Új ügy")
+	@Find(by = By.BUTTON_TEXT, using = "${demo.new.case.button}")
 	private WebElement újÜgyButton;
+
+	@Find(by = By.BUTTON_TEXT, using = "${demo.home.button}")
+	private WebElement demóLink;
+
+	@Find(by = By.BUTTON_TEXT, using = "${demo.cases.button}")
+	private WebElement ügyekLink;
+
+	@Find(by = By.BUTTON_TEXT, using = "${demo.new.case.button}")
+	private WebElement újÜgyLink;
 
 	//tábla elem azonosítás 1-n esetre. érték tárolás. List? Arrylist? Csoprtosítási opciók?
 
