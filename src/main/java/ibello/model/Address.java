@@ -1,8 +1,5 @@
 package ibello.model;
 
-import hu.ibello.data.Model;
-
-@Model
 public class Address {
 
     private String city;

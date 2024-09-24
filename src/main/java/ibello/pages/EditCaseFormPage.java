@@ -19,7 +19,6 @@ public class EditCaseFormPage extends AbstractFormPage {
     }
 
     public void assume_that_title_contains_$_id(String id) {
-        WebElement cím = this.cím.find().using(By.CSS_SELECTOR, "h3").first();
         expectations().assume(cím).toHave().text("Ügy "+id);
     }
 

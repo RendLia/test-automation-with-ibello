@@ -17,11 +17,11 @@ public class NewCaseFormPage extends AbstractFormPage {
     public void page_must_be_loaded() {
         expectations().expect(cím).toBe().displayed();
     }
-    public void is_status_editable(){
+    public void assume_that_status_is_editable(){
         expectations().assume(statusField).toBe().readonly();
     }
-    public void status_is_new() {
-        expectations().assume(statusField).toHave().text("Új"); // az egész szelek lista vissza jön
+    public void assume_that_status_is_$(String status) {
+        expectations().assume(statusField).toHave().selectedOption(status);
     }
 }
 

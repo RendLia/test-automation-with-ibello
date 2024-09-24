@@ -89,7 +89,7 @@ public class AbstractFormPage extends PageObject {
 
 	public void assume_that_responsible_field_is_not_empty() {
 		Pattern p = Pattern.compile("\\w");
-		expectations().assume(responsibleField).toHave().text(p); //üres a text a háttérben
+		expectations().assume(responsibleField).toHave().value(p);
 	}
 
 	public void click_on_save_button() {

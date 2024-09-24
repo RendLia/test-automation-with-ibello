@@ -1,10 +1,7 @@
 package ibello.model;
 
-import hu.ibello.data.Model;
-
 import java.time.LocalDate;
 
-@Model
 public class DefaultData {
 
     private String casename;

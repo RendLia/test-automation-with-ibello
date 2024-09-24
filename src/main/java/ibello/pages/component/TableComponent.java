@@ -25,8 +25,6 @@ public class TableComponent extends PageObject {
         expectations().expect(rows).toHave().size(count);
     }
 
-    //protected  WebElement get_all_cells() {}
-
     private WebElements get_body_rows() {
         return get_table().find().using("tbody tr").all();
     }

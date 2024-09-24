@@ -62,23 +62,23 @@ public class CasesSteps extends StepLibrary {
         }
     }
 
-    public void user_save_case() {
+    public void save_case() {
         newCaseFormPage.click_on_save_button();
     }
 
-    public void case_status_is_new() {
-        newCaseFormPage.status_is_new();
+    public void case_status_should_be_new() {
+        newCaseFormPage.assume_that_status_is_$("Új");
     }
 
-    public void status_is_readonly() {
-        newCaseFormPage.is_status_editable();
+    public void status_should_be_readonly() {
+        newCaseFormPage.assume_that_status_is_editable();
     }
 
-    public void responsible_is_not_empty() {
+    public void responsible_should_be_not_empty() {
         newCaseFormPage.assume_that_responsible_field_is_not_empty();
     }
 
-    public void user_cancel_case_created() {
+    public void cancel_case_creation() {
         newCaseFormPage.click_on_cancel_button();
     }
 
@@ -113,7 +113,7 @@ public class CasesSteps extends StepLibrary {
         }
     }
 
-    public void assume_that_updated_data_appear_in_table(DefaultData data) {
+   /* public void assume_that_updated_data_appear_in_table(DefaultData data) {
         if (data != null){
             String casename = data.getCasename();
             if (casename != null) {
@@ -124,15 +124,15 @@ public class CasesSteps extends StepLibrary {
                 casesTable.assume_that_validity_in_last_row_is_$(validity);
             }
             String person = data.getPerson();
-            if (person != null) {
+              if (person != null) {
                 casesTable.assume_that_person_in_last_row_is_$(person);
             }
         } else {
             throw new TestException("Az ügy adatait tartalmazó teszt adat fájl üres volt");
         }
-    }
+    }*/
 
-    public void assume_that_new_id_appear() {
+    public void assume_that_new_id_appears() {
         casesTable.assume_that_last_row_has_id();
     }
 
