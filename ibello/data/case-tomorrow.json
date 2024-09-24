@@ -1,0 +1,13 @@
+{
+  "address": {
+    "city": "Budapest",
+    "number": "4",
+    "street": "Bajza utca",
+    "zipCode": 1068
+  },
+  "defaultData": {
+    "casename": "Teszt auto",
+    "person": "Kis Pista",
+    "validity": "+1D"
+  }
+}

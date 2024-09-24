@@ -1,0 +1,14 @@
+{
+  "id": "18573924",
+  "address": {
+    "city": "Budapest",
+    "number": "45",
+    "street": "Andrássy út",
+    "zipCode": 1068
+  },
+  "defaultData": {
+    "casename": "Új ügy mentés nélkül",
+    "person": "Mágnás Miska",
+    "validity": "+0D"
+  }
+}
