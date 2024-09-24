@@ -60,6 +60,16 @@
       "positions": [],
       "by": "BUTTON_TEXT",
       "selector": "Új ügy"
+    },
+    {
+      "fieldName": "userLink",
+      "xpath": "/html[1]/body[1]/nav-bar[1]/nav[1]/div[1]/div[2]/ul[2]/li[1]/a[1]",
+      "selected": true,
+      "kind": "CLICKABLE",
+      "relations": [],
+      "positions": [],
+      "by": "BUTTON_TEXT",
+      "selector": "Teszt Elek"
     }
   ],
   "methods": [

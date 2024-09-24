@@ -16,8 +16,7 @@ public class CasesWorkflow extends StepLibrary {
     private int casesCount;
 
     public void a_felhasználó_az_új_ügy_rögzítési_felületen_van() {
-        loginSteps.open_demo_application();
-        loginSteps.login_with_valid_user();
+        navigate_to_cases_page();
         casesSteps.create_new_case();
         casesSteps.new_case_page_is_loaded();
     }
@@ -170,6 +169,5 @@ public class CasesWorkflow extends StepLibrary {
     public void navigate_to_cases_page() {
         loginSteps.open_demo_application();
         loginSteps.login_with_valid_user();
-        casesSteps.cases_page_is_loaded();
     }
 }

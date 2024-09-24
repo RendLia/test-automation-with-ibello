@@ -27,14 +27,23 @@ public class CasesPage extends PageObject {
 	@Find(by = By.BUTTON_TEXT, using = "${demo.new.case.button}")
 	private WebElement újÜgyLink;
 
-	//tábla elem azonosítás 1-n esetre. érték tárolás. List? Arrylist? Csoprtosítási opciók?
+	@Find(by = By.BUTTON_TEXT, using = "Teszt Elek")// TODO Hogy lehetne Teszt Áron-z is használni?
+	private WebElement userLink;
 
 	public void page_must_be_loaded() {
 		expectations().expect(cím).toBe().displayed();
+	}
+
+	public boolean is_page_loaded() {
+		//return browser().getURL().equals(URL); // alternatívája a lentinek
+		return checkThat(cím).isDisplayed();
 	}
 
 	public void click_on_new_case_button() {
 		doWith(újÜgyButton).click();
 	}
 
+	public void click_on_user_name() {
+		doWith(userLink).click();
+	}
 }
