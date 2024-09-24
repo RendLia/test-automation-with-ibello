@@ -67,4 +67,8 @@ public class LoginPage extends PageObject {
         }
         return false;
     }
+
+    public void change_url_for_logout() {
+        browser().openURL(URL);
+    }
 }

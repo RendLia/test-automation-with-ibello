@@ -46,9 +46,11 @@ public class LoginSteps extends StepLibrary{
     }
     
     public void login_with_valid_user() {
-        enter_valid_username();
-        enter_valid_password();
-        attempt_to_login();
+        if (!casesPage.is_page_loaded()){//TODO nem jött össze az iteráció újra kell gondolnom
+            enter_valid_username();
+            enter_valid_password();
+            attempt_to_login();
+        }
         cases_page_is_loaded();
     }
 
@@ -65,4 +67,8 @@ public class LoginSteps extends StepLibrary{
         }
     }
 
+    public void logout() {
+        loginPage.change_url_for_logout();
+        loginPage.page_must_be_loaded();
+    }
 }
