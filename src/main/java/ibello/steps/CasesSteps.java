@@ -22,8 +22,6 @@ public class CasesSteps extends StepLibrary {
     private CasesTable casesTable;
 
     // Oldalbetöltést validáló metódusok
-    // TODO Kelleni fog egy vagy több elágazás attól függően hogy hol lehet az oldal user  vagy gép léptetés
-
     public void new_case_page_is_loaded() {
         newCaseFormPage.page_must_be_loaded();
     }
@@ -113,25 +111,6 @@ public class CasesSteps extends StepLibrary {
         }
     }
 
-   /* public void assume_that_updated_data_appear_in_table(DefaultData data) {
-        if (data != null){
-            String casename = data.getCasename();
-            if (casename != null) {
-                casesTable.assume_that_case_name_in_last_row_is_$(casename);
-            }
-            LocalDate validity = data.getValidity();
-            if (validity != null) {
-                casesTable.assume_that_validity_in_last_row_is_$(validity);
-            }
-            String person = data.getPerson();
-              if (person != null) {
-                casesTable.assume_that_person_in_last_row_is_$(person);
-            }
-        } else {
-            throw new TestException("Az ügy adatait tartalmazó teszt adat fájl üres volt");
-        }
-    }*/
-
     public void assume_that_new_id_appears() {
         casesTable.assume_that_last_row_has_id();
     }
@@ -188,4 +167,6 @@ public class CasesSteps extends StepLibrary {
     public void open_case_with_$_id(String id) {
         casesTable.click_on_case_with_$_id(id);
     }
+
+
 }

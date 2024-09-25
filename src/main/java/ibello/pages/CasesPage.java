@@ -18,17 +18,6 @@ public class CasesPage extends PageObject {
 	@Find(by = By.BUTTON_TEXT, using = "${demo.new.case.button}")
 	private WebElement újÜgyButton;
 
-	@Find(by = By.BUTTON_TEXT, using = "${demo.home.button}")
-	private WebElement demóLink;
-
-	@Find(by = By.BUTTON_TEXT, using = "${demo.cases.button}")
-	private WebElement ügyekLink;
-
-	@Find(by = By.BUTTON_TEXT, using = "${demo.new.case.button}")
-	private WebElement újÜgyLink;
-
-	@Find(by = By.BUTTON_TEXT, using = "Teszt Elek")// TODO Hogy lehetne Teszt Áron-z is használni?
-	private WebElement userLink;
 
 	public void page_must_be_loaded() {
 		expectations().expect(cím).toBe().displayed();
@@ -43,7 +32,4 @@ public class CasesPage extends PageObject {
 		doWith(újÜgyButton).click();
 	}
 
-	public void click_on_user_name() {
-		doWith(userLink).click();
-	}
 }

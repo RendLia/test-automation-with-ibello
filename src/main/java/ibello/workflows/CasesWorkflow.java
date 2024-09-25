@@ -1,6 +1,5 @@
 package ibello.workflows;
 
-import hu.ibello.core.Internal;
 import hu.ibello.core.Name;
 import hu.ibello.steps.StepLibrary;
 import ibello.model.Case;
@@ -16,7 +15,7 @@ public class CasesWorkflow extends StepLibrary {
     private int casesCount;
 
     public void a_felhasználó_az_új_ügy_rögzítési_felületen_van() {
-        navigate_to_cases_page();
+        loginSteps.login_to_cases_page();
         casesSteps.create_new_case();
         casesSteps.new_case_page_is_loaded();
     }
@@ -49,7 +48,7 @@ public class CasesWorkflow extends StepLibrary {
     }
 
     public void a_felhasználó_az_ügyek_oldalon_van() {
-        navigate_to_cases_page();
+        loginSteps.login_to_cases_page();
     }
 
     public void a_felhasználó_ellenőrzi_a_megjelent_ügyek_adatait() {
@@ -137,7 +136,7 @@ public class CasesWorkflow extends StepLibrary {
 
     public void a_felhasználó_egy_meglévő_ügy_oldalán_van() {
         caseData = testData().fromJson(Case.class).withId("1").load();
-        navigate_to_cases_page();
+        loginSteps.login_to_cases_page();
         casesSteps.open_case_with_$_id(caseData.getId());
         casesSteps.edit_form_case_is_loaded();
     }
@@ -165,9 +164,10 @@ public class CasesWorkflow extends StepLibrary {
         casesSteps.assume_that_case_appears_in_table(edit);
     }
 
-    @Internal //az ibello nem tekinti tesztlépésnek, viszont a riportba bekerül
+    //TODO átmozgatva a loginStepsbe
+  /*  @Internal //az ibello nem tekinti tesztlépésnek, viszont a riportba bekerül
     public void navigate_to_cases_page() {
         loginSteps.open_demo_application();
         loginSteps.login_with_valid_user();
-    }
+    }*/
 }
