@@ -16,7 +16,7 @@ public class UserPage extends PageObject {
 
 	@Find(by = By.TEXT, using = "Felhasználó")
 	@Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "panel-heading")
-	private WebElement cím;
+	private WebElement title;
 
 	@Find(by = By.ID, using = "username")
 	private WebElement usernameField;
@@ -40,7 +40,7 @@ public class UserPage extends PageObject {
 	private WebElement error;
 
 	public void page_must_be_loaded() {
-		expectations().expect(cím).toBe().displayed();
+		expectations().expect(title).toBe().displayed();
 	}
 
 	public void assume_that_user_name_is_readonly() {

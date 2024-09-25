@@ -164,7 +164,7 @@ public class CasesWorkflow extends StepLibrary {
         casesSteps.assume_that_case_appears_in_table(edit);
     }
 
-    //TODO átmozgatva a loginStepsbe
+    //átmozgatva a loginStepsbe
   /*  @Internal //az ibello nem tekinti tesztlépésnek, viszont a riportba bekerül
     public void navigate_to_cases_page() {
         loginSteps.open_demo_application();

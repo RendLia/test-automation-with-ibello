@@ -10,13 +10,13 @@ import hu.ibello.search.Find;
 public class NavPanel extends PageObject {
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#']")
-    private WebElement demóLink;
+    private WebElement demoLink;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#/cases']")
-    private WebElement ügyekLink;
+    private WebElement casesLink;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#/new-case']")
-    private WebElement újÜgyLink;
+    private WebElement newCaseLink;
 
     @Find(by = By.CSS_SELECTOR, using = "a[href='#/user']")
     private WebElement userLink;

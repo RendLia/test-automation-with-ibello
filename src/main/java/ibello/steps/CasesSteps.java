@@ -45,7 +45,7 @@ public class CasesSteps extends StepLibrary {
     }
 
     //Új ügyekhez kapcsolódó metódusok
-    public void fill_all_field_with_$_data(Case data) { //kell egy változó teszt adat fájl
+    public void fill_all_field_with_$_data(Case data) {
         if (data != null){
             DefaultData defaultData = data.getDefaultData();
             if (defaultData != null) {
@@ -141,7 +141,7 @@ public class CasesSteps extends StepLibrary {
             }
         }
     }
-    public void fill_address_field_to_$(Address ad) { //kell egy változó teszt adat fájl
+    public void fill_address_field_to_$(Address ad) {
         if ( ad !=null){
             String city = ad.getCity();
             if (city != null) {

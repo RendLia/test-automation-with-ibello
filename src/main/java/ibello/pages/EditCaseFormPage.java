@@ -12,14 +12,14 @@ public class EditCaseFormPage extends AbstractFormPage {
 
     @Find(by = By.PARTIAL_TEXT, using = "Ügy ")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "panel-heading")
-    private WebElement cím;
+    private WebElement title;
 
     public void page_must_be_loaded() {
-        expectations().expect(cím).toBe().displayed();
+        expectations().expect(title).toBe().displayed();
     }
 
     public void assume_that_title_contains_$_id(String id) {
-        expectations().assume(cím).toHave().text("Ügy "+id);
+        expectations().assume(title).toHave().text("Ügy "+id);
     }
 
     public boolean is_status_editable() {

@@ -12,10 +12,10 @@ public class NewCaseFormPage extends AbstractFormPage {
 
     @Find(by = By.TEXT, using = "Új ügy")
     @Relation(type = RelationType.DESCENDANT_OF, by = By.CLASS_NAME, using = "panel-heading")
-    private WebElement cím;
+    private WebElement title;
 
     public void page_must_be_loaded() {
-        expectations().expect(cím).toBe().displayed();
+        expectations().expect(title).toBe().displayed();
     }
     public void assume_that_status_is_editable(){
         expectations().assume(statusField).toBe().readonly();

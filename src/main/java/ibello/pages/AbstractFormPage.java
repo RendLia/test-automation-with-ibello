@@ -13,7 +13,7 @@ public class AbstractFormPage extends PageObject {
 	@Find(by = By.ID, using = "name")
 	private WebElement nameField;
 
-	@Find(by = By.ID, using = "status")//?? nem vagyok benne bbiztos hogy ez igy okés új és szerkesztéskor egyedi a működése
+	@Find(by = By.ID, using = "status")
 	protected static WebElement statusField;
 
 	@Find(by = By.ID, using = "validity")
@@ -38,10 +38,10 @@ public class AbstractFormPage extends PageObject {
 	private WebElement responsibleField;
 
 	@Find(by = By.BUTTON_TEXT, using = "${demo.save.button}")
-	private WebElement mentésButton;
+	private WebElement saveButton;
 
 	@Find(by = By.BUTTON_TEXT, using = "${demo.cancel.button}")
-	private WebElement mégsemButton;
+	private WebElement cancelButton;
 
 	public void set_casename_to_$(String casename) {
 		doWith(nameField).setValue(casename);
@@ -93,10 +93,10 @@ public class AbstractFormPage extends PageObject {
 	}
 
 	public void click_on_save_button() {
-		doWith(mentésButton).click();
+		doWith(saveButton).click();
 	}
 
 	public void click_on_cancel_button() {
-		doWith(mégsemButton).click();
+		doWith(cancelButton).click();
 	}
 }
