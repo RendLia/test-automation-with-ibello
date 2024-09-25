@@ -63,6 +63,15 @@
       "positions": [],
       "by": "BUTTON_TEXT",
       "selector": "Jelszó változtatás"
+    },
+    {
+      "fieldName": "",
+      "selected": true,
+      "kind": "ELEMENT",
+      "relations": [],
+      "positions": [],
+      "by": "CSS_SELECTOR",
+      "selector": ""
     }
   ],
   "methods": []
