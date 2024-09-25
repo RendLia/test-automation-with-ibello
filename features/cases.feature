@@ -3,7 +3,7 @@
 @cases
 Feature: Ügyekhez tartozó tesztek
 
-@cases-2-1 @cases-2-2 @cases-2-6 @cases-2-7 @DONE
+@cases-2-1 @cases-2-2 @cases-2-6 @cases-2-7
 Scenario: Jövőbeni érvényességi dátummal egy új ügy sikeresen rögzíthető
 Alap adatok: megnevezés, érvényesség, személy.
 
@@ -15,7 +15,7 @@ Cím adatok: város, irányítószám, közterület, házszám
 	Then Cases: a felhasználó visszatér az ügyek oldalra
 	And Cases: az új ügy egyedi azonosítóval megjelenik az ügyek táblázatban
 
-@cases-1-1 @DONE
+@cases-1-1
 Scenario: Ügyek lista - megjelenő adatok helyesen jelenek meg
 Megjelenített adatok: azonosító, állapot, megnevezés, személy, érvényesség, felelős.
 	Given Cases: legalább egy ügy van a rendszerben
@@ -38,7 +38,7 @@ Scenario: Ügy létrehozása - generált adatok megjelennek
 	And Cases: az állapot nem szerkeszthető
 	And Cases: az ügy felelőse ki van töltve
 
-@cases-2-5 @DONE
+@cases-2-5
 Scenario: Ügyfelvétel megszakítása sikeres
 	Given Cases: a felhasználó az új ügy rögzítési felületen van
 	And Cases: a felhasználó kitöltötte az összes adatot
@@ -56,7 +56,7 @@ Scenario: Meglévő ügy szerkesztése lehetséges
 	And Cases: az ügy felelőse megjelenik
 	And Cases: a két érték nem módosítható
 
-@cases-3-5 @testrun
+@cases-3-5
 Scenario: Meglévő ügy sikertelen szerekesztése
 Ügy alapadatai: megnevezés, érvényesség, személy.
 	Given Cases: a felhasználó egy meglévő ügy oldalán van
@@ -65,7 +65,7 @@ Scenario: Meglévő ügy sikertelen szerekesztése
 	And Cases: a felhasználó visszatér az ügyek oldalra
 	And Cases: az ügy módosítás nélkül jelenik meg
 
-@cases-3-2 @cases-3-3 @cases-3-6 @DONE
+@cases-3-2 @cases-3-3 @cases-3-6
 Scenario: Meglévő ügy sikeres szerkesztése
 Alap adatok: megnevezés, érvényesség, személy.
 
