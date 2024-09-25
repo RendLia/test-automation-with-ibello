@@ -15,7 +15,7 @@ public class LoginWorkflow extends StepLibrary {
     }
 
     public void a_felhasználó_érvényes_felhasználói_nevet_ad_meg() {
-        loginSteps.enter_valid_password();
+        loginSteps.enter_valid_username();
     }
 
     public void a_felhasználó_érvényes_jelszót_ad_meg() {

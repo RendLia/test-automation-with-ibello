@@ -12,8 +12,12 @@ public class LoginSteps extends StepLibrary{
     private CasesPage casesPage;
     
     public void open_demo_application() {
-        if (!loginPage.is_page_loaded()) {
+        if (!loginPage.is_application_open()) {
             loginPage.open_demo_page();
+        } else {
+            if (!loginPage.is_page_loaded()) {
+                logout();
+            }
         }
         loginPage.page_must_be_loaded();
     }
@@ -46,11 +50,9 @@ public class LoginSteps extends StepLibrary{
     }
     
     public void login_with_valid_user() {
-        if (!casesPage.is_page_loaded()){//TODO nem jött össze az iteráció újra kell gondolnom
-            enter_valid_username();
-            enter_valid_password();
-            attempt_to_login();
-        }
+        enter_valid_username();
+        enter_valid_password();
+        attempt_to_login();
         cases_page_is_loaded();
     }
 
@@ -70,5 +72,17 @@ public class LoginSteps extends StepLibrary{
     public void logout() {
         loginPage.change_url_for_logout();
         loginPage.page_must_be_loaded();
+    }
+
+    public void login_to_cases_page() {
+        open_demo_application();
+        login_with_valid_user();
+    }
+
+    public void login_with_$_username_and_$_password(String username, String pw) {
+        loginPage.set_username_to_$(username);
+        loginPage.set_password_to_$(pw);
+        attempt_to_login();
+        cases_page_is_loaded();
     }
 }

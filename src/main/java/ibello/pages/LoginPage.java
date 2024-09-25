@@ -36,8 +36,12 @@ public class LoginPage extends PageObject {
     }
 
     public boolean is_page_loaded() {
-        //return browser().getURL().equals(URL); // alternatívája a lentinek
-        return checkThat(usernameField).isDisplayed();
+        return browser().getURL().equals(URL); // alternatívája a lentinek
+        //return checkThat(usernameField).isDisplayed();
+    }
+
+    public boolean is_application_open(){
+        return browser().getURL().contains("ibello.hu");
     }
 
     public void click_on_login_button() {
